@@ -11,7 +11,7 @@ function App() {
       {posts.map( (post) => (
       <div key={post.id}> 
       {post.title} 
-      {post.createdAt} 
+      {new Date(post.createdAt).toLocaleDateString("ja-JP", { year: "numeric", month: "short", day: "numeric"})} 
       {post.categories.map ( (category) => (
       <div key={category}> {category} </div> ) )}
       <img src={post.thumbnailUrl} alt={post.title} />
