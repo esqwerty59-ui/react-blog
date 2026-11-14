@@ -1,12 +1,14 @@
 import './App.css'
+import Header from "./components/Header"
 import { posts } from "./data/posts"; 
 
 
 function App() {
 
   return (
-    <div> {
-      posts.map( (post) => (
+    <div>
+      <Header />
+      {posts.map( (post) => (
       <div key={post.id}> 
       {post.title} 
       {post.createdAt} 
@@ -15,8 +17,8 @@ function App() {
       <img src={post.thumbnailUrl} alt={post.title} />
       <div dangerouslySetInnerHTML = {{ __html: post.content }} />
       </div>
-      ))
-    } </div> 
+      ))}
+    </div> 
   )
 }
 
